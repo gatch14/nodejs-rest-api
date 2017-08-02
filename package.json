@@ -1,0 +1,46 @@
+{
+  "name": "nodejs-rest-api",
+  "version": "1.0.0",
+  "description": "A NodeJs REST API Express server using Oauth2, Hateos, Mongodb, mocha, etc",
+  "main": "server.js",
+  "scripts": {
+    "start-dev": "nodemon ./src/bin/www --exec babel-node",
+    "start-prod": "node dist/server.js",
+    "build": "babel src/ -d dist/",
+    "lint": "eslint src/**/*.js",
+    "test": "mocha --compilers js:babel-register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregory-latinier/nodejs-rest-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "oauth2",
+    "mongoose",
+    "mocha"
+  ],
+  "author": "Gregory LATINIER",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gregory-latinier/nodejs-rest-api/issues"
+  },
+  "homepage": "https://github.com/gregory-latinier/nodejs-rest-api#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.5",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "eslint": "^4.3.0",
+    "mocha": "^3.5.0",
+    "nodemon": "^1.11.0"
+  }
+}
