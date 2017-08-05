@@ -4,8 +4,8 @@
   "description": "A NodeJs REST API Express server using Oauth2, Hateos, Mongodb, mocha, etc",
   "main": "server.js",
   "scripts": {
-    "start-dev": "nodemon ./src/bin/www --exec babel-node",
-    "start-prod": "node dist/server.js",
+    "start-dev": "cross-env NODE_ENV=development && nodemon ./src/server.js --exec babel-node",
+    "start-prod": "cross-env NODE_ENV=production && node dist/server.js",
     "build": "babel src/ -d dist/",
     "lint": "eslint src/**/*.js",
     "test": "mocha --compilers js:babel-register"
@@ -29,7 +29,9 @@
   "homepage": "https://github.com/gregory-latinier/nodejs-rest-api#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "cross-env": "^5.0.3",
     "express": "^4.15.3",
+    "method-override": "^2.3.9",
     "mongoose": "^4.11.5",
     "morgan": "^1.8.2"
   },
