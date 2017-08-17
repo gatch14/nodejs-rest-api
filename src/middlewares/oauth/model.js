@@ -15,7 +15,7 @@ const getAccessToken = (bearerToken) => {
       return accessToken;
     })
     .catch((err) => {
-      console.log('getAccessToken - Err: ', err);
+      throw new Error(`getAccessToken - Err: ${ err}`);
     });
 };
 
@@ -30,7 +30,7 @@ const getClient = (clientId, clientSecret) => {
       if (!client) return new Error('client not found');
       return client;
     }).catch((err) => {
-      console.log('getClient - Err: ', err);
+      throw new Error(`getClient - Err: ${ err}`);
     });
 };
 
@@ -42,7 +42,7 @@ const getUser = (username, password) => {
       return user.checkPassword(password) ? user : false;
     })
     .catch((err) => {
-      console.log('getUser - Err: ', err);
+      throw new Error(`getUser - Err: ${ err}`);
     });
 };
 
@@ -63,7 +63,7 @@ const revokeAuthorizationCode = (code) => {
     expiredCode.expiresAt = new Date('2015-05-28T06:59:53.000Z');
     return expiredCode;
   }).catch((err) => {
-    console.log('getUser - Err: ', err);
+    throw new Error(`getUser - Err: ${ err}`);
   });
 };
 
@@ -85,7 +85,7 @@ const revokeToken = (token) => {
     expiredToken.refreshTokenExpiresAt = new Date('2015-05-28T06:59:53.000Z');
     return expiredToken;
   }).catch((err) => {
-    console.log('revokeToken - Err: ', err);
+    throw new Error(`revokeToken - Err: ${ err}`);
   });
 };
 
@@ -117,7 +117,7 @@ const saveToken = (token, client, user) => {
       };
     })
     .catch((err) => {
-      console.log('saveToken - Err: ', err);
+      throw new Error(`saveToken - Err: ${ err}`);
     });
 };
 
@@ -140,7 +140,7 @@ const getAuthorizationCode = (code) => {
         scope: authCodeModel.scope
       };
     }).catch((err) => {
-      console.log('getAuthorizationCode - Err: ', err);
+      throw new Error(`getAuthorizationCode - Err: ${ err}`);
     });
 };
 
@@ -157,7 +157,7 @@ const saveAuthorizationCode = (code, client, user) => {
       code.code = code.authorizationCode;
       return code;
     }).catch((err) => {
-      console.log('saveAuthorizationCode - Err: ', err);
+      throw new Error(`saveAuthorizationCode - Err: ${ err}`);
     });
 };
 
@@ -174,7 +174,7 @@ const getUserFromClient = (client) => {
       if (!oauthClient.user) return false;
       return oauthClient.user;
     }).catch((err) => {
-      console.log('getUserFromClient - Err: ', err);
+      throw new Error(`getUserFromClient - Err: ${ err}`);
     });
 };
 
@@ -189,7 +189,7 @@ const getRefreshToken = (refreshToken) => {
       return savedRT;
 
     }).catch((err) => {
-      console.log('getRefreshToken - Err: ', err);
+      throw new Error(`getRefreshToken - Err: ${ err}`);
     });
 };
 
