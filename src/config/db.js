@@ -7,11 +7,19 @@ const dbConfig = {
     username: 'rest-api',
     password: 'azerty'
   },
+  test: {
+    debug: true,
+    host: 'localhost',
+    port: 27017,
+    database: 'rest-api-test',
+    username: 'rest-api',
+    password: 'azerty'
+  },
   ci: {
     debug: true,
     host: 'localhost',
     port: 27017,
-    database: 'rest-api',
+    database: 'rest-api-ci',
     username: 'rest-api',
     password: 'azerty'
   },
