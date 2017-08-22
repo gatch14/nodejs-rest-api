@@ -9,5 +9,9 @@ export default mongoose.model('Book', new Schema({
   author: {
     type: String,
     required: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
   }
 }));
