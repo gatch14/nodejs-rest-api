@@ -1,14 +1,15 @@
 {
   "name": "nodejs-rest-api",
   "version": "1.0.0",
-  "description": "A NodeJs REST API Express server using Oauth2, Hateos, Mongodb, mocha, etc",
+  "description": "A ES6 NodeJs REST API Express server using Oauth2, Mongodb, mocha, babel",
   "main": "server.js",
   "scripts": {
     "start-dev": "cross-env NODE_ENV=development && nodemon ./src/server.js --exec babel-node",
     "start-prod": "cross-env NODE_ENV=production && node dist/server.js",
     "build": "babel src/ -d dist/",
     "lint": "eslint src/**/*.js",
-    "test": "mocha --compilers js:babel-register"
+    "eslint-autofix": "eslint --fix src/**/*.js",
+    "test": "cross-env NODE_ENV=test && mocha --compilers js:babel-register"
   },
   "repository": {
     "type": "git",
