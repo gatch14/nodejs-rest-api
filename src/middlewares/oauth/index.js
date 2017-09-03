@@ -8,7 +8,7 @@ const oauth = new OAuthServer({
   model,
   allowBearerTokensInQueryString: true,
   accessTokenLifetime: 4 * 60 * 60,
-  refreshTokenLifetime: 30 * 24 * 60 * 60
+  refreshTokenLifetime: 10 * 365 * 24 * 60 * 60
 });
 
 const authenticate = (opts) => {
