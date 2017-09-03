@@ -8,7 +8,7 @@ import app from './app';
 import debugModule from 'debug';
 import http from 'http';
 const debug = debugModule('nodejs-rest-api:server');
-const port = process.env.PORT || '3000';
+const port = process.env.PORT || '5100';
 const server = http.createServer(app);
 /**
  * Get port from environment and store in Express.
