@@ -39,7 +39,7 @@ const getUser = (username, password) => {
   return User
     .findOne({ username: username })
     .then((user) => {
-      return user.checkPassword(password) ? user : false;
+      return user && user.checkPassword(password) ? user : false;
     })
     .catch((err) => {
       throw new Error(`getUser - Err: ${ err}`);
