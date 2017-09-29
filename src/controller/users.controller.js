@@ -40,6 +40,7 @@ const save = (req, res, next) => {
 };
 
 const list = (req, res, next) => {
+  console.log(req);
   User.find({})
     .exec()
     .then((users) => {
